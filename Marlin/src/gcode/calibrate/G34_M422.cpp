@@ -213,7 +213,7 @@ void GcodeSuite::G34() {
         // current_position.z has been manually altered in the "dirty trick" above.
         const float z_probed_height = probe.probe_at_point(z_stepper_align.xy[iprobe], raise_after, 0, true, false);
         if (isnan(z_probed_height)) {
-          SERIAL_ECHOLNPGM("Probing failed.");
+          SERIAL_ECHOLNPGM("Probing failed. z_probed_height is NAN!");
           err_break = true;
           break;
         }
